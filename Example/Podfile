@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HDNetworking_Example' do
+  pod 'HDNetworking', :path => '../'
+
+  target 'HDNetworking_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
