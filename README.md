@@ -22,7 +22,7 @@ pod "HDNetworking"
 
 ## Author
 
-midea-smart, libing.deng@midea.com
+denglibing, 13049862397@163.com
 
 ## License
 
