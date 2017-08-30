@@ -9,34 +9,17 @@
 Pod::Spec.new do |s|
   s.name             = 'HDNetworking'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of HDNetworking.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
+  s.summary          = '基于AFNetworking进行网络请求，基于PINCache进行网络数据缓存的网络请求组件'
+  s.description      = '基于AFNetworking进行网络请求，基于PINCache进行网络数据缓存，支持清除指定url缓存、url及参数组合缓存，通过AFNetworkActivityLogger进行网络log打印。该代码使用灵活的请求方式，不包含任何业务代码，上层支持集中式、分布式网络接口管理方式，在请求前可以对请求进行配置，也支持对网络请求后返回的数据进行统一处理'
   s.homepage         = 'https://github.com/midea-smart/HDNetworking'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'midea-smart' => 'libing.deng@midea.com' }
+  s.author           = { 'denglibing' => 'libing.deng@midea.com' }
   s.source           = { :git => 'https://github.com/midea-smart/HDNetworking.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'http://blog.csdn.net/u012390519'
 
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'HDNetworking/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'HDNetworking' => ['HDNetworking/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'HDNetworking/*.h'
+  s.source_files = 'HDNetworking/*.{h,m}'
+  s.dependency 'AFNetworking'
+  s.dependency 'PINCache'
 end

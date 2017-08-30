@@ -23,6 +23,9 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		D9311C451F542032002696F8 /* HDRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9311C3F1F542032002696F8 /* HDRequestManager.m */; };
+		D9311C461F542032002696F8 /* HDBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9311C421F542032002696F8 /* HDBaseViewModel.m */; };
+		D9311C471F542032002696F8 /* HDHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9311C441F542032002696F8 /* HDHomeViewModel.m */; };
 		F687EACFAD94B27208DCB245 /* Pods_HDNetworking_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38248E58AC88955D2B78B520 /* Pods_HDNetworking_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2DD2E92E334BA2529F2844D6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2DD2E92E334BA2529F2844D6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		38248E58AC88955D2B78B520 /* Pods_HDNetworking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDNetworking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* HDNetworking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDNetworking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,7 +60,7 @@
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
-		606D5660F2F1237606967FED /* HDNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HDNetworking.podspec; path = ../HDNetworking.podspec; sourceTree = "<group>"; };
+		606D5660F2F1237606967FED /* HDNetworking.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = HDNetworking.podspec; path = ../HDNetworking.podspec; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77038E108603012342F5B2F3 /* Pods-HDNetworking_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDNetworking_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDNetworking_Tests/Pods-HDNetworking_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,7 +68,14 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BE38072FFC7D8164ADCC537 /* Pods-HDNetworking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDNetworking_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDNetworking_Tests/Pods-HDNetworking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E9BC66EBFC019B108361334 /* Pods-HDNetworking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDNetworking_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDNetworking_Example/Pods-HDNetworking_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C500EA1BE210E1F754D5F5D0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C500EA1BE210E1F754D5F5D0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D9311C3E1F542032002696F8 /* HDRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRequestManager.h; sourceTree = "<group>"; };
+		D9311C3F1F542032002696F8 /* HDRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDRequestManager.m; sourceTree = "<group>"; };
+		D9311C411F542032002696F8 /* HDBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDBaseViewModel.h; sourceTree = "<group>"; };
+		D9311C421F542032002696F8 /* HDBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDBaseViewModel.m; sourceTree = "<group>"; };
+		D9311C431F542032002696F8 /* HDHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHomeViewModel.h; sourceTree = "<group>"; };
+		D9311C441F542032002696F8 /* HDHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHomeViewModel.m; sourceTree = "<group>"; };
+		D9311C4A1F55127D002696F8 /* HDRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDRequest.h; sourceTree = "<group>"; };
 		F64942043AD69930E181C55A /* Pods_HDNetworking_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDNetworking_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -150,6 +160,7 @@
 				6003F5A6195388D20070C39A /* HDViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				D9311C3C1F542032002696F8 /* HDRequest */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for HDNetworking";
@@ -194,6 +205,36 @@
 				C500EA1BE210E1F754D5F5D0 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		D9311C3C1F542032002696F8 /* HDRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D9311C4A1F55127D002696F8 /* HDRequest.h */,
+				D9311C3D1F542032002696F8 /* HDCentralRequest */,
+				D9311C401F542032002696F8 /* HDDispersedRequest */,
+			);
+			path = HDRequest;
+			sourceTree = "<group>";
+		};
+		D9311C3D1F542032002696F8 /* HDCentralRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D9311C3E1F542032002696F8 /* HDRequestManager.h */,
+				D9311C3F1F542032002696F8 /* HDRequestManager.m */,
+			);
+			path = HDCentralRequest;
+			sourceTree = "<group>";
+		};
+		D9311C401F542032002696F8 /* HDDispersedRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D9311C411F542032002696F8 /* HDBaseViewModel.h */,
+				D9311C421F542032002696F8 /* HDBaseViewModel.m */,
+				D9311C431F542032002696F8 /* HDHomeViewModel.h */,
+				D9311C441F542032002696F8 /* HDHomeViewModel.m */,
+			);
+			path = HDDispersedRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,11 +393,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HDNetworking_Example/Pods-HDNetworking_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/HDNetworking/HDNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HDNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -403,9 +448,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9311C461F542032002696F8 /* HDBaseViewModel.m in Sources */,
 				6003F59E195388D20070C39A /* HDAppDelegate.m in Sources */,
+				D9311C451F542032002696F8 /* HDRequestManager.m in Sources */,
 				6003F5A7195388D20070C39A /* HDViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				D9311C471F542032002696F8 /* HDHomeViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,9 +18,78 @@
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdV-Kw-6Z3">
+                                <rect key="frame" x="137" y="63" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5tL-z9-pUT"/>
+                                    <constraint firstAttribute="height" constant="30" id="xcX-9L-Vuv"/>
+                                </constraints>
+                                <state key="normal" title="集中式API请求"/>
+                                <connections>
+                                    <action selector="centralRequest:" destination="whP-gf-Uak" eventType="touchUpInside" id="PtM-rr-zIf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQm-i5-s9j">
+                                <rect key="frame" x="137" y="195" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="BUu-kX-6kr"/>
+                                    <constraint firstAttribute="height" constant="30" id="OBV-Ma-HaT"/>
+                                </constraints>
+                                <state key="normal" title="分布式API请求"/>
+                                <connections>
+                                    <action selector="dispersedRequest:" destination="whP-gf-Uak" eventType="touchUpInside" id="gfa-Fl-OVm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZE-e9-es8">
+                                <rect key="frame" x="126" y="301" width="123" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kGR-nq-BJY"/>
+                                    <constraint firstAttribute="width" constant="123" id="mtu-wW-TRn"/>
+                                </constraints>
+                                <state key="normal" title="清除本地缓存数据"/>
+                                <connections>
+                                    <action selector="clearCache:" destination="whP-gf-Uak" eventType="touchUpInside" id="B5a-Ig-PaB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdL-7U-Xhw">
+                                <rect key="frame" x="125" y="400" width="125" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IY4-S3-crZ"/>
+                                    <constraint firstAttribute="width" constant="125" id="hKL-uJ-ZaN"/>
+                                </constraints>
+                                <state key="normal" title="清除指定url的数据"/>
+                                <connections>
+                                    <action selector="clearCacheUrl:" destination="whP-gf-Uak" eventType="touchUpInside" id="dyR-rG-ttd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="at7-5S-jbI">
+                                <rect key="frame" x="111" y="481" width="153" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="YpU-6D-myn"/>
+                                    <constraint firstAttribute="height" constant="30" id="jlY-jD-c0h"/>
+                                </constraints>
+                                <state key="normal" title="清除指定url、id的数据"/>
+                                <connections>
+                                    <action selector="clearCacheUrlId:" destination="whP-gf-Uak" eventType="touchUpInside" id="peN-dA-LzR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OdV-Kw-6Z3" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="9ha-fS-ROD"/>
+                            <constraint firstItem="XdL-7U-Xhw" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="ENI-TX-y9f"/>
+                            <constraint firstItem="iZE-e9-es8" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="GeF-3p-Jsi"/>
+                            <constraint firstItem="at7-5S-jbI" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="Hk4-ot-uR9"/>
+                            <constraint firstItem="MQm-i5-s9j" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="W74-jd-Ax7"/>
+                            <constraint firstItem="OdV-Kw-6Z3" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="43" id="jL7-h2-YnW"/>
+                            <constraint firstItem="at7-5S-jbI" firstAttribute="top" secondItem="XdL-7U-Xhw" secondAttribute="bottom" constant="51" id="ko3-fA-n4s"/>
+                            <constraint firstItem="iZE-e9-es8" firstAttribute="top" secondItem="MQm-i5-s9j" secondAttribute="bottom" constant="76" id="qZQ-iB-bVc"/>
+                            <constraint firstItem="MQm-i5-s9j" firstAttribute="top" secondItem="OdV-Kw-6Z3" secondAttribute="bottom" constant="102" id="rho-h1-VJ8"/>
+                            <constraint firstItem="XdL-7U-Xhw" firstAttribute="top" secondItem="iZE-e9-es8" secondAttribute="bottom" constant="69" id="zG7-MW-JHR"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
