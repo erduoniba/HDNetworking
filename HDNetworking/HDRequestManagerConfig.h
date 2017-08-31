@@ -16,6 +16,22 @@
 
 extern const CGFloat HDRequestTimeoutInterval;
 
+
+/**
+ 缓存策略机制
+
+ - HDRequestReturnCacheDontLoad: 如果缓存有效则直接返回缓存，不再load，缓存实效则返回nil。（场景：几乎没有任何变化的接口，实效性低）
+ - HDRequestReturnCacheAndLoadToCache: 如果缓存有效则直接返回缓存，并且load且缓存数据，缓存实效则load返回，且缓存数据。（场景：接口实效性不高，但需要有一定实效性，比如商品详情接口）
+ - HDRequestReturnLoadToCache: 直接load并返回数据，且缓存数据，如果load失败则读取缓存数据。（场景：接口需要一定的实效性，但同时要有数据支持，比如项目的首页接口）
+ - HDRequestReturnLoadDontCache: 直接load并返回数据，不缓存数据，如果load失败则直接抛出Error。（场景：接口一定是实时的，并且保证返回的数据真实、可靠、安全，而非本地缓存数据，比如支付接口）
+ */
+typedef NS_ENUM(NSUInteger, HDRequestCachePolicy) {
+    HDRequestReturnCacheDontLoad = 0,
+    HDRequestReturnCacheAndLoadToCache,
+    HDRequestReturnLoadToCache,
+    HDRequestReturnLoadDontCache,
+};
+
 /**
  请求配置类，比如设置baseURL，request、response、timeout、请求的头部通用配置、缓存配置、数据做统一的处理
  */
@@ -54,9 +70,9 @@ extern const CGFloat HDRequestTimeoutInterval;
 @property (nonatomic, assign) NSInteger resultCacheDuration;
 
 /**
- 优先取本地缓存，如果缓存时间过期则重新请求，默认NO
+ 缓存策略, 默认是HDRequestReturnLoadToCache
  */
-@property (nonatomic, assign) BOOL requestPriorityCache;
+@property (nonatomic, assign) HDRequestCachePolicy requestCachePolicy;
 
 
 /**

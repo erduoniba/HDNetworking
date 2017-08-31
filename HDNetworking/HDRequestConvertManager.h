@@ -37,6 +37,8 @@ typedef NS_ENUM(NSInteger, HDRequestMethod) {
     HDRequestMethodDelete,
 };
 
+typedef void(^HDRequestManagerCompletion)(NSURLSessionTask * _Nullable httpbase, id _Nullable cacheResponse, id _Nullable response, HDError * _Nullable error);
+typedef void(^HDRequestManagerCache)(id _Nullable responseObject);
 typedef void(^HDRequestManagerSuccess)(NSURLSessionTask * _Nullable httpbase, id _Nullable responseObject);
 typedef void(^HDRequestManagerFailure)(NSURLSessionTask * _Nullable httpbase, HDError * _Nullable error);
 typedef void(^HDRequestManagerProgress)(NSProgress * _Nullable progress);
@@ -80,10 +82,11 @@ typedef void(^HDRequestManagerProgress)(NSProgress * _Nullable progress);
 /**
  提供给上层请求
 
- @param method 请求的方法，当为HDRequestMethodGet的时候，可以在configuration选择是否缓存数据
+ @param method 请求的方法，可以在configuration选择是否缓存数据
  @param URLString 请求的URL地址，不包含baseUrl
  @param parameters 请求的参数
  @param configurationHandler 将默认的配置给到外面，外面可能需要特殊处理，可以修改baseUrl等信息
+ @param cache 如果有的话返回缓存数据（⚠️⚠️缓存的数据是服务器返回的数据，而不是经过configuration处理后的数据，但是返回给上层数据事处理后的数据）
  @param success 请求成功
  @param failure 请求失败
  @return 返回该请求的任务管理者，用于取消该次请求(⚠️⚠️，当返回值为nil时，表明并没有进行网络请求，那就是取缓存数据)
@@ -92,6 +95,7 @@ typedef void(^HDRequestManagerProgress)(NSProgress * _Nullable progress);
                                        URLString:(NSString *_Nullable)URLString
                                       parameters:(NSDictionary *_Nullable)parameters
                             configurationHandler:(void (^_Nullable)(HDRequestManagerConfig * _Nullable configuration))configurationHandler
+                                           cache:(HDRequestManagerCache _Nullable )cache
                                          success:(HDRequestManagerSuccess _Nullable )success
                                          failure:(HDRequestManagerFailure _Nullable )failure;
 

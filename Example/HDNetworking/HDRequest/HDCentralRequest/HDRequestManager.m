@@ -93,7 +93,9 @@
                                    parameters:@{@"page" : @(pageIndex), @"maxResult" : @(pageSize)}
                          configurationHandler:^(HDRequestManagerConfig * _Nullable configuration) {
                              configuration.resultCacheDuration = 100000;    //设置缓存时长为100000秒
-                             configuration.requestPriorityCache = YES;      //优先取缓存数据，不在请求网络数据
+                             configuration.requestCachePolicy = HDRequestReturnCacheDontLoad;    //优先取缓存数据，不在请求网络数据
+                         } cache:^(id  _Nullable responseObject) {
+                             
                          } success:^(NSURLSessionTask * _Nullable dataTask, id  _Nullable responseObject) {
                              success(dataTask, responseObject);
                          } failure:^(NSURLSessionTask * _Nullable dataTask, HDError * _Nullable error) {

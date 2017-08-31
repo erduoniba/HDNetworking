@@ -26,6 +26,7 @@
 		D9311C451F542032002696F8 /* HDRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9311C3F1F542032002696F8 /* HDRequestManager.m */; };
 		D9311C461F542032002696F8 /* HDBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9311C421F542032002696F8 /* HDBaseViewModel.m */; };
 		D9311C471F542032002696F8 /* HDHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9311C441F542032002696F8 /* HDHomeViewModel.m */; };
+		D94D03ED1F57EC66008B89B0 /* pilicy.png in Resources */ = {isa = PBXBuildFile; fileRef = D94D03EC1F57EC66008B89B0 /* pilicy.png */; };
 		F687EACFAD94B27208DCB245 /* Pods_HDNetworking_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38248E58AC88955D2B78B520 /* Pods_HDNetworking_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		D9311C431F542032002696F8 /* HDHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHomeViewModel.h; sourceTree = "<group>"; };
 		D9311C441F542032002696F8 /* HDHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHomeViewModel.m; sourceTree = "<group>"; };
 		D9311C4A1F55127D002696F8 /* HDRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDRequest.h; sourceTree = "<group>"; };
+		D94D03EC1F57EC66008B89B0 /* pilicy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pilicy.png; sourceTree = "<group>"; };
 		F64942043AD69930E181C55A /* Pods_HDNetworking_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDNetworking_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -203,6 +205,7 @@
 				606D5660F2F1237606967FED /* HDNetworking.podspec */,
 				2DD2E92E334BA2529F2844D6 /* README.md */,
 				C500EA1BE210E1F754D5F5D0 /* LICENSE */,
+				D94D03EC1F57EC66008B89B0 /* pilicy.png */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				D94D03ED1F57EC66008B89B0 /* pilicy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

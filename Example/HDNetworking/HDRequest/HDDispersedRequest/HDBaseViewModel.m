@@ -95,6 +95,8 @@
                                                parameters:[self hdRequestParamters]
                                      configurationHandler:^(HDRequestManagerConfig * _Nullable configuration) {
                                          [self hdRequestConfiguration:configuration];
+                                     } cache:^(id  _Nullable responseObject) {
+
                                      } success:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
 
                                      } failure:^(NSURLSessionTask * _Nullable httpbase, HDError * _Nullable error) {

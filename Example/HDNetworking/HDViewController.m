@@ -32,7 +32,7 @@
 
     _dRequest = [HDHomeViewModel new];
     _dRequest.pageSize = 20;
-
+    
     _cRequest = [HDRequestManager sharedInstance];
 }
 

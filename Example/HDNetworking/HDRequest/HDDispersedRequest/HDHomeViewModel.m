@@ -22,7 +22,7 @@
 
 - (void)hdRequestConfiguration:(HDRequestManagerConfig *)configuration {
     configuration.timeoutInterval = 5.0f;
-    configuration.requestPriorityCache = YES;//优先取缓存数据，不在请求网络数据
+    configuration.requestCachePolicy = HDRequestReturnCacheDontLoad; //优先取缓存数据，不在请求网络数据
     configuration.resultCacheDuration = 10; //设置缓存时长为10秒
 }
 

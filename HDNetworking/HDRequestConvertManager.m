@@ -115,18 +115,20 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
 /**
  提供给上层请求
 
- @param method 请求的方法，当为HDRequestMethodGet的时候，可以在configuration选择是否缓存数据
+ @param method 请求的方法，可以在configuration选择是否缓存数据
  @param URLString 请求的URL地址，不包含baseUrl
  @param parameters 请求的参数
  @param configurationHandler 将默认的配置给到外面，外面可能需要特殊处理，可以修改baseUrl等信息
+ @param cache 如果有的话返回缓存数据（⚠️⚠️缓存的数据是服务器返回的数据，而不是经过configuration处理后的数据）
  @param success 请求成功
  @param failure 请求失败
- @return 返回该请求的任务管理者，用于取消该次请求
+ @return 返回该请求的任务管理者，用于取消该次请求(⚠️⚠️，当返回值为nil时，表明并没有进行网络请求，那就是取缓存数据)
  */
 - (NSURLSessionDataTask *_Nullable)requestMethod:(HDRequestMethod)method
                                        URLString:(NSString *_Nullable)URLString
                                       parameters:(NSDictionary *_Nullable)parameters
                             configurationHandler:(void (^_Nullable)(HDRequestManagerConfig * _Nullable configuration))configurationHandler
+                                           cache:(HDRequestManagerCache _Nullable )cache
                                          success:(HDRequestManagerSuccess _Nullable )success
                                          failure:(HDRequestManagerFailure _Nullable )failure {
     HDRequestManagerConfig *configuration = [self disposeConfiguration:configurationHandler];
@@ -135,29 +137,36 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
 
     //PINCache缓存取数据
     NSString *cacheKey = [requestUrl stringByAppendingString:[self serializeParams:parameters]];
-    if (configuration.requestPriorityCache && method == HDRequestMethodGet) {
+    id (^ fetchCacheRespose)(void) = ^id (void) {
         if ([self verifyInvalidCache:cacheKey]) {
             id resposeObject = [self.cache objectForKey:cacheKey];
             if (resposeObject) {
                 if (configuration.resposeHandle) {
                     resposeObject = configuration.resposeHandle(nil, resposeObject);
                 }
-                NSLog(@"该次请求数据来自本地缓存");
-                success(nil, resposeObject);
-                return nil;
+                return resposeObject;
             }
+        }
+        return nil;
+    };
+
+    if (configuration.requestCachePolicy == HDRequestReturnCacheDontLoad ||
+        configuration.requestCachePolicy == HDRequestReturnCacheAndLoadToCache) {
+        id resposeObject = fetchCacheRespose();
+        cache(resposeObject);
+        if (configuration.requestCachePolicy == HDRequestReturnCacheDontLoad) {
+            return nil;
         }
     }
 
     //PINCache缓存存数据
-    void (^ cacheRespose)(id responseObject) = ^(id responseObject) {
-        if (configuration.resultCacheDuration > 0 && method == HDRequestMethodGet) {
+    void (^ saveCacheRespose)(id responseObject) = ^(id responseObject) {
+        if (configuration.resultCacheDuration > 0) {
             [self setCacheInvalidTimeWithCacheKey:cacheKey resultCacheDuration:configuration.resultCacheDuration];
             [self.cache setObject:responseObject forKey:cacheKey];
             [self addCacheKey:cacheKey atRequestUrl:requestUrl];
         }
     };
-
 
     //接口请求
     if (method > self.methodMap.count - 1) {
@@ -181,19 +190,26 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
                                                       else {
                                                           hdError = [HDError hdErrorHttpError:error];
                                                       }
+                                                      if (configuration.requestCachePolicy == HDRequestReturnLoadToCache) {
+                                                          id resposeObject = fetchCacheRespose();
+                                                          cache(resposeObject);
+                                                      }
                                                       failure(dataTask, hdError);
                                                   }
                                                   else {
+                                                      if (configuration.requestCachePolicy != HDRequestReturnLoadDontCache) {
+                                                          saveCacheRespose(responseObject);
+                                                      }
                                                       if (configuration.resposeHandle) {
                                                           responseObject = configuration.resposeHandle(dataTask, responseObject);
                                                       }
-                                                      cacheRespose(responseObject);
                                                       success(dataTask, responseObject);
                                                   }
                                               }];
     [dataTask resume];
     return dataTask;
 }
+
 
 /**
  上传资源方法

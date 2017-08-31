@@ -16,7 +16,7 @@ const CGFloat HDRequestTimeoutInterval = 10.0f;
     self = [super init];
     if (self) {
         _timeoutInterval = HDRequestTimeoutInterval;
-        _requestPriorityCache = NO;
+        _requestCachePolicy = HDRequestReturnLoadToCache;
     }
     return self;
 }
