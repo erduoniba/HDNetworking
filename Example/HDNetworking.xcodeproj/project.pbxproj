@@ -61,7 +61,7 @@
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
-		606D5660F2F1237606967FED /* HDNetworking.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = HDNetworking.podspec; path = ../HDNetworking.podspec; sourceTree = "<group>"; };
+		606D5660F2F1237606967FED /* HDDNetworking.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = HDDNetworking.podspec; path = ../HDDNetworking.podspec; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77038E108603012342F5B2F3 /* Pods-HDNetworking_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDNetworking_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDNetworking_Tests/Pods-HDNetworking_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				606D5660F2F1237606967FED /* HDNetworking.podspec */,
+				606D5660F2F1237606967FED /* HDDNetworking.podspec */,
 				2DD2E92E334BA2529F2844D6 /* README.md */,
 				C500EA1BE210E1F754D5F5D0 /* LICENSE */,
 				D94D03EC1F57EC66008B89B0 /* pilicy.png */,
