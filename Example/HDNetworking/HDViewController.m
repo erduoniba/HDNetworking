@@ -39,16 +39,24 @@
 - (IBAction)centralRequest:(id)sender {
     [_cRequest laughterListPageIndex:random() % 3
                             pageSize:20
-                             success:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
+                               cache:^(id  _Nullable responseObject) {
 
-                             } failure:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
+                               } success:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
 
-                             }];
+                               } failure:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
+                                   
+                               }];
 }
 
 - (IBAction)dispersedRequest:(id)sender {
     _dRequest.pageIndex = random() % 3;
-    [_dRequest start];
+    [_dRequest requestCache:^(id  _Nullable responseObject) {
+        NSLog(@"cache");
+    } success:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
+        NSLog(@"success");
+    } failure:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
+        NSLog(@"failure");
+    }];
 }
 
 - (IBAction)clearCache:(id)sender {

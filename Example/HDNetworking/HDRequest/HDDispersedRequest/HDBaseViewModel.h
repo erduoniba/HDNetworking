@@ -63,7 +63,9 @@
 
 @property (nonatomic, strong, readonly) HDRequestManagerConfig *configuration;
 
-- (void)start;
+- (void)requestCache:(HDRequestManagerCache _Nullable )cache
+             success:(HDRequestManagerSuccess _Nullable )success
+             failure:(HDRequestManagerSuccess _Nullable )failure;
 - (void)canncel;
 
 /**

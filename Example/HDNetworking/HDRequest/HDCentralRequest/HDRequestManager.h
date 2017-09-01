@@ -43,6 +43,7 @@
 
 - (void)laughterListPageIndex:(NSInteger)pageIndex
                      pageSize:(NSInteger)pageSize
+                        cache:(HDRequestManagerCache _Nullable )cache
                       success:(HDRequestManagerSuccess _Nullable )success
                       failure:(HDRequestManagerSuccess _Nullable )failure;
 

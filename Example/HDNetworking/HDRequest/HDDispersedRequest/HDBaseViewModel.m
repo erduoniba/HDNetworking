@@ -47,7 +47,7 @@
     //添加我们需要的类型，接口返回的是 text/html
     [self.requestConvertManager.configuration.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
 
-    [self.requestConvertManager setLoggerLevel:AFLoggerLevelDebug];
+    [self.requestConvertManager setLoggerLevel:AFLoggerLevelInfo];
 
     //通过configuration来统一处理输出的数据，比如对token失效处理、对需要重新登录拦截
     self.requestConvertManager.configuration.resposeHandle = ^id (NSURLSessionTask *dataTask, id responseObject) {
@@ -89,18 +89,20 @@
     
 }
 
-- (void)start {
+- (void)requestCache:(HDRequestManagerCache _Nullable )cache
+             success:(HDRequestManagerSuccess _Nullable )success
+             failure:(HDRequestManagerSuccess _Nullable )failure {
     _dataTask = [self.requestConvertManager requestMethod:[self hdRequestMethodType]
                                                 URLString:[self hdRequestURL]
                                                parameters:[self hdRequestParamters]
                                      configurationHandler:^(HDRequestManagerConfig * _Nullable configuration) {
                                          [self hdRequestConfiguration:configuration];
                                      } cache:^(id  _Nullable responseObject) {
-
+                                         cache(responseObject);
                                      } success:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
-
+                                         success(httpbase, responseObject);
                                      } failure:^(NSURLSessionTask * _Nullable httpbase, HDError * _Nullable error) {
-                                         
+                                         failure(httpbase, error);
                                      }];
 }
 

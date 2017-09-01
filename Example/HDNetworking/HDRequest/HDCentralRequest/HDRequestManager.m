@@ -55,7 +55,7 @@
     //添加我们需要的类型，接口返回的是 text/html
     [self.requestConvertManager.configuration.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
 
-    [self.requestConvertManager setLoggerLevel:AFLoggerLevelDebug];
+    [self.requestConvertManager setLoggerLevel:AFLoggerLevelInfo];
 
     //通过configuration来统一处理输出的数据，比如对token失效处理、对需要重新登录拦截
     self.requestConvertManager.configuration.resposeHandle = ^id (NSURLSessionTask *dataTask, id responseObject) {
@@ -86,6 +86,7 @@
 #pragma mark - 具体接口
 - (void)laughterListPageIndex:(NSInteger)pageIndex
                      pageSize:(NSInteger)pageSize
+                        cache:(HDRequestManagerCache _Nullable )cache
                       success:(HDRequestManagerSuccess _Nullable )success
                       failure:(HDRequestManagerSuccess _Nullable )failure {
     [self.requestConvertManager requestMethod:HDRequestMethodPost
@@ -93,9 +94,10 @@
                                    parameters:@{@"page" : @(pageIndex), @"maxResult" : @(pageSize)}
                          configurationHandler:^(HDRequestManagerConfig * _Nullable configuration) {
                              configuration.resultCacheDuration = 100000;    //设置缓存时长为100000秒
-                             configuration.requestCachePolicy = HDRequestReturnCacheDontLoad;    //优先取缓存数据，不在请求网络数据
+                             configuration.requestCachePolicy = HDRequestReturnLoadToCache;    //优先取缓存数据，不在请求网络数据
                          } cache:^(id  _Nullable responseObject) {
-                             
+                             NSLog(@"缓存数据");
+                             cache(responseObject);
                          } success:^(NSURLSessionTask * _Nullable dataTask, id  _Nullable responseObject) {
                              success(dataTask, responseObject);
                          } failure:^(NSURLSessionTask * _Nullable dataTask, HDError * _Nullable error) {
