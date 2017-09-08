@@ -14,5 +14,7 @@ xcode_scheme: HDNetworking-Example
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/HDNetworking.xcworkspace -scheme HDNetworking-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES \
+ -workspace Example/HDNetworking.xcworkspace -scheme HDNetworking-Example \
+ -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- pod lib lint --allow-warnings
