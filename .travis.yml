@@ -14,6 +14,5 @@ xcode_scheme: HDNetworking-Example
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES \
- -workspace Example/HDNetworking.xcworkspace -scheme HDNetworking-Example | xcpretty
+- set -o pipefail && xcodebuild clean -workspace Example/HDNetworking.xcworkspace -scheme HDNetworking-Example | xcpretty
 - pod lib lint --allow-warnings
