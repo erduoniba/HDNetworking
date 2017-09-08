@@ -15,6 +15,5 @@ xcode_scheme: HDNetworking-Example
 # - pod install --project-directory=Example
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES \
- -workspace Example/HDNetworking.xcworkspace -scheme HDNetworking-Example \
- -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+ -workspace Example/HDNetworking.xcworkspace -scheme HDNetworking-Example | xcpretty
 - pod lib lint --allow-warnings
