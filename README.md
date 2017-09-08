@@ -1,6 +1,6 @@
 # HDNetworking
 
-[![CI Status](http://img.shields.io/travis/midea-smart/HDNetworking.svg?style=flat)](https://travis-ci.org/midea-smart/HDNetworking)
+[![Build Status](https://travis-ci.org/erduoniba/HDNetworking.svg?branch=master)](https://travis-ci.org/erduoniba/HDNetworking)
 [![Version](https://img.shields.io/cocoapods/v/HDNetworking.svg?style=flat)](http://cocoapods.org/pods/HDNetworking)
 [![License](https://img.shields.io/cocoapods/l/HDNetworking.svg?style=flat)](http://cocoapods.org/pods/HDNetworking)
 [![Platform](https://img.shields.io/cocoapods/p/HDNetworking.svg?style=flat)](http://cocoapods.org/pods/HDNetworking)
