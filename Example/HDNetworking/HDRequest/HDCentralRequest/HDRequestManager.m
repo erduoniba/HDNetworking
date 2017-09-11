@@ -10,6 +10,8 @@
 
 #import "HDRequestManagerConfig.h"
 
+#import "HDErrorDemo.h"
+
 @interface HDRequestManager ()
 
 @property (nonatomic, strong) HDRequestConvertManager *requestConvertManager;
@@ -56,6 +58,7 @@
     [self.requestConvertManager.configuration.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
 
     [self.requestConvertManager setLoggerLevel:AFLoggerLevelInfo];
+    self.requestConvertManager.configuration.HDError = [HDErrorDemo class];
 
     //通过configuration来统一处理输出的数据，比如对token失效处理、对需要重新登录拦截
     self.requestConvertManager.configuration.resposeHandle = ^id (NSURLSessionTask *dataTask, id responseObject) {

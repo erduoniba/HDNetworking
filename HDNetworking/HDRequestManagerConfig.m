@@ -8,6 +8,8 @@
 
 #import "HDRequestManagerConfig.h"
 
+#import "HDError.h"
+
 const CGFloat HDRequestTimeoutInterval = 10.0f;
 
 @implementation HDRequestManagerConfig
@@ -17,6 +19,7 @@ const CGFloat HDRequestTimeoutInterval = 10.0f;
     if (self) {
         _timeoutInterval = HDRequestTimeoutInterval;
         _requestCachePolicy = HDRequestReturnLoadToCache;
+        _HDError = [HDError class];
     }
     return self;
 }
@@ -46,6 +49,7 @@ const CGFloat HDRequestTimeoutInterval = 10.0f;
     configuration.requestSerializer = [self.requestSerializer copy];
     configuration.responseSerializer = [self.responseSerializer copy];
     configuration.responseSerializer.acceptableContentTypes = self.responseSerializer.acceptableContentTypes;
+    configuration.HDError = self.HDError;
     return configuration;
 }
 

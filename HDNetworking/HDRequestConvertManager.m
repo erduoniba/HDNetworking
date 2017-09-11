@@ -185,10 +185,10 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
                                                   if (error) {
                                                       HDError *hdError;
                                                       if (strong_self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
-                                                          hdError = [HDError hdErrorNetNotReachable];
+                                                          hdError = [configuration.HDError hdErrorNetNotReachable];
                                                       }
                                                       else {
-                                                          hdError = [HDError hdErrorHttpError:error];
+                                                          hdError = [configuration.HDError hdErrorHttpError:error];
                                                       }
                                                       if (configuration.requestCachePolicy == HDRequestReturnLoadToCache) {
                                                           id resposeObject = fetchCacheRespose();
@@ -246,10 +246,10 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
                                          __strong typeof(self) strong_self = weak_self;
                                          HDError *hdError;
                                          if (strong_self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
-                                             hdError = [HDError hdErrorNetNotReachable];
+                                             hdError = [configuration.HDError hdErrorNetNotReachable];
                                          }
                                          else {
-                                             hdError = [HDError hdErrorHttpError:error];
+                                             hdError = [configuration.HDError hdErrorHttpError:error];
                                          }
                                          failure(task, hdError);
                                      }];
@@ -288,10 +288,10 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
                                             if (error) {
                                                 HDError *hdError;
                                                 if (strong_self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
-                                                    hdError = [HDError hdErrorNetNotReachable];
+                                                    hdError = [configuration.HDError hdErrorNetNotReachable];
                                                 }
                                                 else {
-                                                    hdError = [HDError hdErrorHttpError:error];
+                                                    hdError = [configuration.HDError hdErrorHttpError:error];
                                                 }
                                                 failure(dataTask, hdError);
                                             }

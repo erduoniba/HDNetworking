@@ -16,6 +16,8 @@
 
 extern const CGFloat HDRequestTimeoutInterval;
 
+@class HDError;
+
 
 /**
  缓存策略机制
@@ -79,5 +81,11 @@ typedef NS_ENUM(NSUInteger, HDRequestCachePolicy) {
  对请求返回的数据做统一的处理，比如token失效、重新登录等等操作。
  */
 @property (nonatomic, copy) id (^ resposeHandle)(NSURLSessionTask *dataTask, id responseObject);
+
+
+/**
+ 业务层自定义的一些error信息，方便统一管理
+ */
+@property (nonatomic, strong) Class HDError;
 
 @end

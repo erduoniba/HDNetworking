@@ -24,6 +24,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		D92EDDBA1F622881000FD8FF /* HDDNetworking.png in Resources */ = {isa = PBXBuildFile; fileRef = D92EDDB91F622881000FD8FF /* HDDNetworking.png */; };
+		D92EDDBE1F66690F000FD8FF /* HDErrorDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D92EDDBD1F66690F000FD8FF /* HDErrorDemo.m */; };
 		D9311C451F542032002696F8 /* HDRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9311C3F1F542032002696F8 /* HDRequestManager.m */; };
 		D9311C461F542032002696F8 /* HDBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9311C421F542032002696F8 /* HDBaseViewModel.m */; };
 		D9311C471F542032002696F8 /* HDHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9311C441F542032002696F8 /* HDHomeViewModel.m */; };
@@ -72,6 +73,8 @@
 		8E9BC66EBFC019B108361334 /* Pods-HDNetworking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDNetworking_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDNetworking_Example/Pods-HDNetworking_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C500EA1BE210E1F754D5F5D0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D92EDDB91F622881000FD8FF /* HDDNetworking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HDDNetworking.png; sourceTree = "<group>"; };
+		D92EDDBC1F66690F000FD8FF /* HDErrorDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HDErrorDemo.h; path = ../HDErrorDemo.h; sourceTree = "<group>"; };
+		D92EDDBD1F66690F000FD8FF /* HDErrorDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HDErrorDemo.m; path = ../HDErrorDemo.m; sourceTree = "<group>"; };
 		D9311C3E1F542032002696F8 /* HDRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRequestManager.h; sourceTree = "<group>"; };
 		D9311C3F1F542032002696F8 /* HDRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDRequestManager.m; sourceTree = "<group>"; };
 		D9311C411F542032002696F8 /* HDBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDBaseViewModel.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 		D9311C3C1F542032002696F8 /* HDRequest */ = {
 			isa = PBXGroup;
 			children = (
+				D92EDDBC1F66690F000FD8FF /* HDErrorDemo.h */,
+				D92EDDBD1F66690F000FD8FF /* HDErrorDemo.m */,
 				D9311C4A1F55127D002696F8 /* HDRequest.h */,
 				D9311C3D1F542032002696F8 /* HDCentralRequest */,
 				D9311C401F542032002696F8 /* HDDispersedRequest */,
@@ -456,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D92EDDBE1F66690F000FD8FF /* HDErrorDemo.m in Sources */,
 				D9311C461F542032002696F8 /* HDBaseViewModel.m in Sources */,
 				6003F59E195388D20070C39A /* HDAppDelegate.m in Sources */,
 				D9311C451F542032002696F8 /* HDRequestManager.m in Sources */,
